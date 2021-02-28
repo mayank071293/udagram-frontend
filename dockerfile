@@ -5,4 +5,6 @@ RUN npm install -g ionic
 RUN npm install
 COPY ./ /app/
 RUN ionic build
-CMD [ "ionic","serve" ]
+EXPOSE 8100
+ENTRYPOINT ["ionic"]
+CMD ["serve", "8100", "--address", "0.0.0.0"]
